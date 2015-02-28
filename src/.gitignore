@@ -1,0 +1,6 @@
+TestResults/
+Postmon/bin/
+Postmon/obj/
+Postmon.Client/bin/
+Postmon.Client/obj/
+packages/
