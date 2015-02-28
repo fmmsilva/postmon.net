@@ -42,6 +42,7 @@ namespace Postmon
                 endereco.Bairro = obj.bairro;
                 endereco.CEP = obj.cep;
                 endereco.Logradouro = obj.logradouro;
+                endereco.Unidade = obj.unidade;
 
                 endereco.Cidade = new Cidade();
                 endereco.Cidade.Nome = obj.cidade;
