@@ -63,7 +63,49 @@ namespace Postmon
             }
         }
 
-         private static double GetDouble(string value, double defaultValue)
+
+        public static Estado ConsultarEstado(string uf)
+        {
+
+            try
+            {
+
+                string url = BASE_URL;
+
+                var client = new RestClient(url);
+
+
+                var request = new RestRequest("uf/{uf}", Method.GET);
+                request.AddUrlSegment("uf", uf);
+
+
+                IRestResponse response = client.Execute(request);
+
+                if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                {
+                    return null;
+                }
+
+                var content = response.Content;
+
+                dynamic obj = JsonConvert.DeserializeObject<dynamic>(content);
+
+                Estado estado = new Estado();
+                estado.Nome = obj.nome;
+                estado.Sigla = uf.ToUpper();
+                estado.Area = GetDouble((string)obj.area_km2, 0);
+                estado.CodigoIBGE = obj.codigo_ibge;
+
+                return estado;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+
+        private static double GetDouble(string value, double defaultValue)
         {
             double result;
             string output;

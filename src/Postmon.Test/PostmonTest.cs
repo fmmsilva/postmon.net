@@ -29,5 +29,31 @@ namespace Postmon.Test
             Assert.IsTrue(endereco.Cidade.Nome == "Vitória");
             Assert.IsTrue(endereco.Cidade.Estado.Sigla == "ES");
         }
+
+
+        [TestMethod]
+        public void UF_Valida_Deve_Retornar_Estado()
+        {
+            Assert.IsNotNull(Postmon.PostmonClient.ConsultarEstado("es"));
+            Assert.IsNotNull(Postmon.PostmonClient.ConsultarEstado("ES"));
+            Assert.IsNotNull(Postmon.PostmonClient.ConsultarEstado("Es"));
+        }
+
+        [TestMethod]
+        public void UF_Invalida_Deve_Retornar_Nulo()
+        {
+            Assert.IsNull(Postmon.PostmonClient.ConsultarEstado("xx"));
+            Assert.IsNull(Postmon.PostmonClient.ConsultarEstado("xyz"));
+        }
+
+        [TestMethod]
+        public void UF_Deve_Estar_Relacionada_a_Estado()
+        {
+            Estado es = Postmon.PostmonClient.ConsultarEstado("ES");
+            Assert.IsTrue(es.Nome == "Espírito Santo");
+        }
+
+
+
     }
 }
