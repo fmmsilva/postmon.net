@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postmon", "Postmon\Postmon.csproj", "{B65F819C-A5EC-47A3-A045-02270EB3BBFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postmon.Test", "Postmon.Test\Postmon.Test.csproj", "{A08C71EB-9304-44BC-BB58-5D4083ECB716}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postmon.Client", "Postmon.Client\Postmon.Client.csproj", "{E33422E6-FD0D-4C82-A06F-52646749E8A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B65F819C-A5EC-47A3-A045-02270EB3BBFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B65F819C-A5EC-47A3-A045-02270EB3BBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B65F819C-A5EC-47A3-A045-02270EB3BBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B65F819C-A5EC-47A3-A045-02270EB3BBFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A08C71EB-9304-44BC-BB58-5D4083ECB716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A08C71EB-9304-44BC-BB58-5D4083ECB716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A08C71EB-9304-44BC-BB58-5D4083ECB716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A08C71EB-9304-44BC-BB58-5D4083ECB716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E33422E6-FD0D-4C82-A06F-52646749E8A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E33422E6-FD0D-4C82-A06F-52646749E8A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E33422E6-FD0D-4C82-A06F-52646749E8A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E33422E6-FD0D-4C82-A06F-52646749E8A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
