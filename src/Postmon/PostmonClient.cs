@@ -63,7 +63,6 @@ namespace Postmon
             }
         }
 
-
         public static Estado ConsultarEstado(string uf)
         {
 
@@ -97,6 +96,56 @@ namespace Postmon
                 estado.CodigoIBGE = obj.codigo_ibge;
 
                 return estado;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public static Cidade ConsultarCidade(string uf, string nome, bool carregarDetalhesDoEstado = false)
+        {
+
+            try
+            {
+
+                string url = BASE_URL;
+
+                var client = new RestClient(url);
+
+
+                var request = new RestRequest("cidade/{uf}/{nome}", Method.GET);
+                request.AddUrlSegment("uf", uf);
+                request.AddUrlSegment("nome", nome);
+
+
+                IRestResponse response = client.Execute(request);
+
+                if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                {
+                    return null;
+                }
+
+                var content = response.Content;
+
+                dynamic obj = JsonConvert.DeserializeObject<dynamic>(content);
+
+                Cidade cidade = new Cidade();
+                cidade.Nome = nome;
+                cidade.Area = GetDouble((string)obj.area_km2, 0);
+                cidade.CodigoIBGE = obj.codigo_ibge;
+
+                if (carregarDetalhesDoEstado)
+                {
+                    cidade.Estado = ConsultarEstado(uf);
+                }
+                else
+                {
+                    cidade.Estado = new Estado();
+                    cidade.Estado.Sigla = uf.ToUpper();
+                }
+
+                return cidade;
             }
             catch
             {

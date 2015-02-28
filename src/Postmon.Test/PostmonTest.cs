@@ -54,6 +54,25 @@ namespace Postmon.Test
         }
 
 
+        [TestMethod]
+        public void Parametros_Validos_Devem_Retornar_Cidade()
+        {
+            Assert.IsNotNull(Postmon.PostmonClient.ConsultarCidade("ES", "Vitória", false));
+        }
+
+        [TestMethod]
+        public void Cidade_Invalida_Deve_Retornar_Nulo()
+        {
+            Assert.IsNull(Postmon.PostmonClient.ConsultarCidade("ES", "Rio de Janeiro", false));
+        }
+
+        [TestMethod]
+        public void Detalhes_de_estado_devem_ser_carregados_corretamente()
+        {
+            Cidade vitoria = Postmon.PostmonClient.ConsultarCidade("ES", "Vitória", true);
+            Assert.IsTrue(vitoria.Estado.Nome == "Espírito Santo");
+        }
+
 
     }
 }
