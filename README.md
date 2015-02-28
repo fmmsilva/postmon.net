@@ -1,4 +1,5 @@
-# postmon.net
+# postmon.net [![Build status](https://ci.appveyor.com/api/projects/status/xf1e5cpf8cmujjhw?svg=true)](https://ci.appveyor.com/project/fmmsilva/postmon-net)
+
 Cliente [Postmon](http://www.postmon.com.br) para .NET
 
 ## Como utilizar?
